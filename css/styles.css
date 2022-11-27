@@ -6,10 +6,52 @@
 
 body {
     background-color: antiquewhite;
-    color: grey;
+    color: rgb(0, 0, 0);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+/* forma de hacer una "grilla" */
 .grid-container {
+    padding: 10px;
     background-color: aquamarine;
+    /* aplicamos una nueva propiedad "grid" */
+    display: grid;
+
+    /* luego podremos elegir el posicionamiento de las cajas */
+
+    /* grid-template-columns: 150px 200px 400px; */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 100px 300px 50px;
+
+    /* Separa las cajas de grid */
+    gap: 10px;
+    /* lo mismo pero eligiendo e forma row o column */
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+/* forma de trabajar sobre las lineas de grid agarrando mas espacio una caja */
+.box-1 {
+    grid-column: 1/4;
+    grid-row: 1/3;
+
+    grid-area: 1 / 2 / 4 / 3;
+}
+
+/* en este ejemplo vemos q pueden pisarse las cajas */
+/* .box-4 {
+    background-color: chocolate;
+    grid-column: 2/4;
+    grid-row: 2/4;
+} */
+.box-4 {
+    background-color: rgb(180, 32, 32);
+    /* desplaza todo para agregarse entre las cajas */
+    grid-column: span 3;
+    grid-row: 2/4;
+}
+
+.box-grid {
+    padding: 1.5rem;
+    border: 2px solid black;
+    background-color: #d5d5d5;
 }

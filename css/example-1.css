@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    /* importante para agrandar todas las cajas modificadas con grid */
+    height: 100vh;
+    /* definimos cantidad de lugares por caja con '' */
+    grid-template-areas: 'header header header header header header header'
+    'sidebar sidebar main main main main aside'
+    'sidebar sidebar footer footer footer footer footer'
+    ;
+    
+    grid-template-rows: 60px 1fr 150px;
+}
+
+.header {
+    background-color: cadetblue;
+    grid-area: header;
+
+}
+
+.sidebar {
+    background-color: aquamarine;
+    grid-area: sidebar;
+}
+
+.main {
+    background-color: green;
+    grid-area: main;
+}
+
+.aside {
+    background-color: chocolate;
+    grid-area: aside;
+}
+
+.footer {
+    background-color: crimson;
+    grid-area: footer;
+}
